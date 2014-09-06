@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-  		<style>
-		  	#map-canvas {
-		      height: 100vh;
-		      width: 100%;
-		      background-color: #fff;
-		      text-alignn: center;
-		    }
-		</style>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+	    <!-- Latest compiled and minified CSS -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="static/styles/style.css">
+	    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	    <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	    <meta charset = 'utf-8'>
+	    <title>Parking Spot</title>
     </head>
     <body>
+    
+    	<div>
+	        <section class="title">
+	            <h1>Parking Spot</h1>
+	        </section>
+	        <section>
+	                <div class="form-group">
+	                    <div class="input-group">
+	                        <div class="input-group-addon btn" type="submit">Search <span class="glyphicon glyphicon-search"></span></div>
+	                            <input class="form-control" type="address" placeholder="Enter location">
+	                        </div>
+	                    </div>
+	                </div>
+		    </section>
+	    </div>
+
     	<div id="map-canvas"></div>
+
     </body>
 		<script src="static/JS/rsvp.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6U2ExB8yLDc7RiGPYK3C3yIzDPpyFJE0&sensor=false"></script>
