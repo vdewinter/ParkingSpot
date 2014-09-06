@@ -1,4 +1,6 @@
 /*global Firebase, google, $, GeoFire    */
+
+// TODO: add San Francisco to request to geocoder and implement search
  
 (function () {
     "use strict";
@@ -10,8 +12,8 @@
  
     function start() {
         var con, mag, continent, circleLoc, circle, circleOptions, geoFireGarages, geoFireStreets, geoQueryGarages, geoQueryStreets, myLatlng, previousInfowindow, initialLocation;
-        map = new google.maps.Map(document.getElementById('map-canvas'), {zoom: 14});
-        
+        map = new google.maps.Map(document.getElementById('map-canvas'), {zoom: 16});
+
         if(navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
