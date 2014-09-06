@@ -2,11 +2,11 @@
 <html>
     <head>
 		<link rel="stylesheet" href="static/styles/jquery-ui.css">
-	    <link rel="stylesheet" href="static/styles/bootstrap.min.css">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="static/styles/style.css">
 	    <script src="static/JS/jquery-1.11.0.min.js"></script>
 	    <script src="static/JS/jquery-ui.js"></script>
-	    <script src="static/JS/bootstrap.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	    <meta charset = 'utf-8'>
 	    
@@ -14,10 +14,11 @@
     </head>
     <body>
 
-    	<div>
+    	<div style= "padding-left: 5px">
 	        <section class="title">
-	            <h1>Parking Spot</h1>
+	            <h1><img src="/static/img/parkingspot.png" height="70"></h1>
 	        </section>
+
 	        <section>
 	                <div class="form-group">
 	                    <div class="input-group">
@@ -25,6 +26,19 @@
 	                            <input class="form-control" type="address" placeholder="Enter location">
 	                        </div>
 	                    </div>
+
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style = "margin-top: 22px">
+                                    Key<span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li style= "padding-left: 5px"><img src="/static/img/orange.jpg">  $0-$2.00/hr</a></li>
+                                <li style= "padding-left: 5px"><img src="/static/img/green.jpg">  $2.01-$4.00/hr</li>
+                                <li style= "padding-left: 5px"><img src="/static/img/red.jpg">  >$4.00/hr</li>
+                                <li style= "padding-left: 5px"><img src="/static/img/black.jpg">  No Data</li>
+                            </ul>
+                        </div>
+
 	                </div>
 		    </section>
 	    </div>
