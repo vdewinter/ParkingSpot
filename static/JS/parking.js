@@ -11,10 +11,60 @@
  
     function start() {
         var con, mag, continent, circleLoc, circle, circleOptions, geoFireGarages, geoFireStreets, geoQueryGarages, geoQueryStreets, myLatlng, previousInfowindow;
-        map = new google.maps.Map(document.getElementById('map-canvas'), {zoom: 15});
- 
+        map = new google.maps.Map(document.getElementById('map-canvas'), {zoom: 14});
         myLatlng = new google.maps.LatLng(center[0], center[1]);
-        map.setCenter(myLatlng);
+        // map.setCenter(myLatlng);
+
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                console.log(initialLocation);
+                map.setCenter(initialLocation);
+
+                circleOptions = {
+                strokeColor: "#000000",
+                strokeOpacity: 0.3,
+                strokeWeight: 1,
+                fillColor: "#000000",
+                fillOpacity: 0.1,
+                map: map,
+                center: initialLocation,
+                radius: ((radiusInKm) * 1000),
+                draggable: true
+                };
+         
+                circle = new google.maps.Circle(circleOptions);
+
+                google.maps.event.addListener(circle, "drag", function (event) {
+                    var latLng = circle.getCenter();
+         
+                    geoQueryStreets.updateCriteria({
+                        center: [latLng.lat(), latLng.lng()],
+                        radius: radiusInKm
+                    });
+         
+                    geoQueryGarages.updateCriteria({
+                        center: [latLng.lat(), latLng.lng()],
+                        radius: radiusInKm
+                    });
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            });
+        }
  
         geoFireGarages = new GeoFire(ref.child('garages/_geofire'));
         geoFireStreets = new GeoFire(ref.child('streets/_geofire'));
@@ -29,19 +79,6 @@
             radius: radiusInKm
         });
  
-        circleOptions = {
-            strokeColor: "#000000",
-            strokeOpacity: 0.3,
-            strokeWeight: 1,
-            fillColor: "#000000",
-            fillOpacity: 0.1,
-            map: map,
-            center: myLatlng,
-            radius: ((radiusInKm) * 1000),
-            draggable: true
-        };
- 
-        circle = new google.maps.Circle(circleOptions);
  
         geoQueryGarages.on("key_entered", function (id, location) {
             ref.child('garages/').child(id).once('value', function (snapshot) {
@@ -176,19 +213,7 @@
             });
         });
  
-        google.maps.event.addListener(circle, "drag", function (event) {
-            var latLng = circle.getCenter();
- 
-            geoQueryStreets.updateCriteria({
-                center: [latLng.lat(), latLng.lng()],
-                radius: radiusInKm
-            });
- 
-            geoQueryGarages.updateCriteria({
-                center: [latLng.lat(), latLng.lng()],
-                radius: radiusInKm
-            });
-        });
+        
     }
  
     start();
