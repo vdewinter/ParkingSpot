@@ -12,30 +12,32 @@
 	    
 	    <title>Parking Spot</title>
     </head>
+
     <body>
 
-    	<div style= "padding-left: 5px">
+    	<div style= "padding-left: 9px">
 	        <section class="title">
-	            <h1><img src="/static/img/parkingspot.png" height="70"></h1>
+	            <h1><img class="logo" src="/static/img/parkingspot.png"></h1>
 	        </section>
 
 	        <section>
 	                <div class="form-group">
 	                    <div class="input-group">
-	                        <div class="input-group-addon btn" type="submit">Search <span class="glyphicon glyphicon-search"></span></div>
-	                            <input class="form-control" type="address" placeholder="Enter location">
+	                        <div id="search" class="input-group-addon btn" type="button">Search</div>
+	                            <input class="form-control" id="address" placeholder="Enter location">
 	                        </div>
 	                    </div>
 
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style = "margin-top: 22px">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                     Key<span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                                <li style= "padding-left: 5px"><img src="/static/img/orange.jpg">  $0-$2.00/hr</a></li>
-                                <li style= "padding-left: 5px"><img src="/static/img/green.jpg">  $2.01-$4.00/hr</li>
-                                <li style= "padding-left: 5px"><img src="/static/img/red.jpg">  >$4.00/hr</li>
-                                <li style= "padding-left: 5px"><img src="/static/img/black.jpg">  No Data</li>
+                                <li><img src="/static/img/orange.jpg">  $0-$2.00/hr</a></li>
+                                <li><img src="/static/img/green.jpg">  $2.01-$4.00/hr</li>
+                                <li><img src="/static/img/red.jpg">  >$4.00/hr</li>
+                                <li><img src="/static/img/black.jpg">  No Data</li>
+                                <li><img class="google-pin" src="/static/img/googlePin.png">  Garage</li>
                             </ul>
                         </div>
 
